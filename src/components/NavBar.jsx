@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar(props) {
   return (
@@ -12,9 +13,10 @@ function NavBar(props) {
           }}
         >       
                 <img src={props.img} style={{width:"8%"}} alt="fotoLogo" />
-                <a style={{ display: "flex", padding: "2%" }} href="index.html">
-                    GS Tecnologies
+                <a style={{ display: "flex", padding: "2%" }} >
+                    <Link to={ `./` }> GS Tecnologies </Link>
                 </a>
+                
 
                 <li style={{ display: "flex", padding: "2%" }} class="nav-item">
                     <a href="index.html">Home</a>
