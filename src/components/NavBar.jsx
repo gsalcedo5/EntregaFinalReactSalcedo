@@ -1,10 +1,20 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import {cartContext} from "../context/cartContext";
+
 
 function NavBar(props) {
+  const {cart} = useContext(cartContext);
+  function getCountInCart() {
+    let total = 0;
+    cart.forEach((item) => (total += item.count));
+    console.log(total);
+    return total;
+  }
   return (
     <nav>
-      <div class="container-fluid">
+      <div className="container-fluid">
         <ul
           style={{
             display: "flex",
@@ -18,17 +28,20 @@ function NavBar(props) {
                 </a>
                 
 
-                <li style={{ display: "flex", padding: "2%" }} class="nav-item">
+                <li style={{ display: "flex", padding: "2%" }} >
                     <a href="index.html">Home</a>
                 </li>
-                <li style={{ display: "flex", padding: "2%" }} class="nav-item">
+                <li style={{ display: "flex", padding: "2%" }} >
                     <a href="./pages/Smartphones.html">Smartphones</a>
                 </li>
-                <li style={{ display: "flex", padding: "2%" }} class="nav-item">
+                <li style={{ display: "flex", padding: "2%" }} >
                     <a href="./pages/Nosotros.html">Nosotros</a>
                 </li>
                 <div style={{ display: "flex", padding: "2%" }}>
-                    <CartWidget />
+                    
+                    <CartWidget cant={cart} />
+
+                
           </div>
         </ul>
       </div>

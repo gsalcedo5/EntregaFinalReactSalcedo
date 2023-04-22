@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-function ItemList({pokemon}){
+function Item({pokemon}){
 
     return (
 <div key={pokemon.name} className='card'>
@@ -11,6 +11,6 @@ function ItemList({pokemon}){
     );
 
 }
-  export default ItemList;
+  export default Item;
 
  
