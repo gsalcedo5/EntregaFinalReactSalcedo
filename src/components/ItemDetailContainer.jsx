@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemCount from './ItemCount';
 import ItemDetail from './ItemDetail';
-import {cartContext, getCountInCart} from "../context/cartContext";
+import {cartContext} from "../context/cartContext";
 
 
 function ItemDetailContainer() {
@@ -11,7 +11,7 @@ function ItemDetailContainer() {
   const pokemonName = params.pokemonName;
 
 const {cart, addItem} = useContext(cartContext);
-console.log("cart:", cart)
+console.log("cart:", cart) /* Cantidad elementos que se muestran en el carrito*/
 
 
   useEffect(() => {
@@ -28,10 +28,8 @@ console.log("cart:", cart)
 
   function handleAddToCart(count){
     addItem(count);
-    console.log("Agregaste al carrito este pokemon:" , pokemonDetails.name,count,cart);
+    console.log("Agregaste al carrito este pokemon:" , pokemonDetails.name);
 }
-
-
 
   return (
     <div>

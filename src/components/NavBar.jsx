@@ -6,12 +6,6 @@ import {cartContext} from "../context/cartContext";
 
 function NavBar(props) {
   const {cart} = useContext(cartContext);
-  function getCountInCart() {
-    let total = 0;
-    cart.forEach((item) => (total += item.count));
-    console.log(total);
-    return total;
-  }
   return (
     <nav>
       <div className="container-fluid">
@@ -40,8 +34,6 @@ function NavBar(props) {
                 <div style={{ display: "flex", padding: "2%" }}>
                     
                     <CartWidget cant={cart} />
-
-                
           </div>
         </ul>
       </div>

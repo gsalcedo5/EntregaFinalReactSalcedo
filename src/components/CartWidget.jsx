@@ -1,7 +1,7 @@
 function CartWidget ({cant}){
     return(
         <div>🛒
-        <span >{cant} </span>
+            {cant!=0 && <span> ({cant})</span>}
         </div>
     );
 }
