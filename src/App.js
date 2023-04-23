@@ -17,7 +17,7 @@ function App() {
           <NavBar img="/imgs/gst.webp" />
           <Routes>
             <Route path="/" element={ <ItemListContainer/>}/> 
-            <Route path="/detalle/:pokemonName" element={<ItemDetailContainer/>}/> 
+            <Route path="/detalle/:pokeid" element={<ItemDetailContainer/>}/> 
             <Route path="/cart" element={ <CartContainer/>}/>
           </Routes>
         </BrowserRouter>

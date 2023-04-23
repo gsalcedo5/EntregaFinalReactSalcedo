@@ -5,7 +5,7 @@ function Item({pokemon}){
     return (
 <div key={pokemon.name} className='card'>
 <h5>{pokemon.name}</h5>
-<Link to={ `/detalle/${pokemon.name}` }> Ver detalle del pokemon</Link>
+<Link to={ `/detalle/${pokemon.id}` }> Ver detalle del pokemon</Link>
 </div>
     );
 
