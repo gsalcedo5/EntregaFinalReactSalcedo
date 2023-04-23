@@ -17,24 +17,19 @@ function NavBar(props) {
           }}
         >       
                 <img src={props.img} style={{width:"8%"}} alt="fotoLogo" />
-                <a style={{ display: "flex", padding: "2%" }} >
-                    <Link to={ `./` }> GS Tecnologies </Link>
-                </a>
                 
+                
+                
+                <li style={{ display: "flex", padding: "2%" }} >
+                <Link to={ `./` }> Tienda de pokemones </Link>
+                </li>
+                <li style={{ display: "flex", padding: "2%" }} >
+                <Link to="/cart" > Cart</Link>
+                </li>
 
-                <li style={{ display: "flex", padding: "2%" }} >
-                    <a href="index.html">Home</a>
+                  <li style={{ display: "flex", padding: "2%" }} >
+                  <CartWidget cant={cart.length} />
                 </li>
-                <li style={{ display: "flex", padding: "2%" }} >
-                    <a href="./pages/Smartphones.html">Smartphones</a>
-                </li>
-                <li style={{ display: "flex", padding: "2%" }} >
-                    <a href="./pages/Nosotros.html">Nosotros</a>
-                </li>
-                <div style={{ display: "flex", padding: "2%" }}>
-                    
-                    <CartWidget cant={cart} />
-          </div>
         </ul>
       </div>
     </nav>

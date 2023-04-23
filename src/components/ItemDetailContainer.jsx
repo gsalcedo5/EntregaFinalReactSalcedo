@@ -11,7 +11,7 @@ function ItemDetailContainer() {
   const pokemonName = params.pokemonName;
 
 const {cart, addItem} = useContext(cartContext);
-console.log("cart:", cart) /* Cantidad elementos que se muestran en el carrito*/
+/*console.log("cart:", cart) /* Cantidad elementos que se muestran en el carrito*/
 
 
   useEffect(() => {
@@ -27,8 +27,8 @@ console.log("cart:", cart) /* Cantidad elementos que se muestran en el carrito*/
   }
 
   function handleAddToCart(count){
-    addItem(count);
-    console.log("Agregaste al carrito este pokemon:" , pokemonDetails.name);
+    addItem(count,pokemonDetails.name);
+    // console.log("Agregaste al carrito este pokemon:" , pokemonDetails.name);
 }
 
   return (

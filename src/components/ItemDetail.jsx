@@ -4,7 +4,6 @@ function ItemDetail({pokemonDetails}){
     if (!pokemonDetails) {
         return null;
       }
-      console.log(pokemonDetails);
     return(   
     <div>
         <h2 style={{margin:"40px"}}>{pokemonDetails.name}</h2>

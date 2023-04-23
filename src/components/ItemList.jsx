@@ -5,8 +5,8 @@
   
       return (
         <ul>
-          {props.items.map((item) => (
-              <Item pokemon={item}/>
+          {props.items.map((item,index) => (
+              <Item key={index} pokemon={item}/>
           ))}
         </ul>
       );

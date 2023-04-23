@@ -8,7 +8,6 @@ function ItemListContainer() {
     fetch("https://pokeapi.co/api/v2/pokemon") 
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       setPokemonList(json.results) 
     });
 
