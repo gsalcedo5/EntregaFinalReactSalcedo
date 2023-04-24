@@ -5,23 +5,23 @@ const cartContext = createContext({default : "default"});
 
 const Provider = cartContext.Provider;
 
+
 function CartProvider(props){
     const [cart, setCart]= useState([]);
 
     function addItem(count,productsName){
         const newCart = cart.concat(Array.from({length: count}, () => productsName)); 
-        console.log("newCart:", newCart);
         setCart(newCart);
     }  
 
 
-
     function getTotalPrice(count,productPrice){
         const totalPrice = productPrice*count;
-        console.log(totalPrice);
+        console.log("El precio total de la suma de "+ count+ " pokemones de este tipo es " + totalPrice);
         return totalPrice;
     }
- 
+
+
     function clearCart(){
         setCart([]);
     }
@@ -33,4 +33,4 @@ function CartProvider(props){
     );
 }
 
-export { cartContext, CartProvider };
+export { cartContext, CartProvider};
