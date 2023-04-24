@@ -1,6 +1,6 @@
 /* -------- FIREBASE ------- */
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, getDoc, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEfMfbp8xzjC3FVdNHk4kisb2KTz5FCDQ",
@@ -33,3 +33,19 @@ export async function getSingleItem(pokeid){
     return{ id: docSnap.id, ...docSnap.data()  } 
 
 }
+
+export async function createOrder(order){
+    const collectionOrdersRef = collection(db, "oders");
+    const response = await addDoc(collectionOrdersRef, order);
+   return(response.id);
+
+}
+
+/* export async function exportData(){
+    const collectionRef = collection (db, "products")
+for (let item of products){
+
+    await addDoc(collectionRef, item)
+    console.log("producto exportado con ID: "+ response.id)
+}
+} */

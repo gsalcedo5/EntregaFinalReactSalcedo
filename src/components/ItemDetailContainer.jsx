@@ -27,16 +27,13 @@ const {cart, addItem} = useContext(cartContext);
   const [pokemonDetails, setPokemonDetails] = useState(null);
   const { pokeid} = useParams();
   const pokemonName = pokeid;
-const {cart, addItem} = useContext(cartContext);
-
-  console.log(pokeid)
+  
+const {cart, addItem, getTotalPrice} = useContext(cartContext);
   useEffect(() => {
     if (pokemonName) {
       getSingleItem(pokeid).then((response) => setPokemonDetails(response));
     } 
   }, [pokemonName]);
-
-
 
   if (!pokemonDetails) {
     return <p>Loading...</p>;
@@ -44,10 +41,12 @@ const {cart, addItem} = useContext(cartContext);
 
   function handleAddToCart(count){
     addItem(count,pokemonDetails.name);
+    getTotalPrice(count,pokemonDetails.price)
 }
 
   return (
     <div>
+
     <ItemDetail pokemonDetails={pokemonDetails} />
     <ItemCount onAddToCart={handleAddToCart} />
     </div>

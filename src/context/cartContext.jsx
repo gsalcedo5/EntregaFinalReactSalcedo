@@ -8,15 +8,26 @@ const Provider = cartContext.Provider;
 function CartProvider(props){
     const [cart, setCart]= useState([]);
 
-    function addItem(count,products){
-        const newCart = cart.concat(Array.from({length: count}, () => products));
+    function addItem(count,productsName){
+        const newCart = cart.concat(Array.from({length: count}, () => productsName)); 
         console.log("newCart:", newCart);
         setCart(newCart);
+    }  
 
+
+
+    function getTotalPrice(count,productPrice){
+        const totalPrice = productPrice*count;
+        console.log(totalPrice,"tupapa");
+        return totalPrice;
+    }
+ 
+    function clearCart(){
+        setCart([]);
     }
 
     return(
-        <Provider value= {{ cart: cart , addItem: addItem }}> 
+        <Provider value= {{ cart: cart , addItem: addItem , getTotalPrice, clearCart}}> 
             {props.children }
         </Provider>
     );

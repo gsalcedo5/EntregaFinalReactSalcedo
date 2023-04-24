@@ -35,6 +35,7 @@ function ItemDetail({pokemonDetails}){
             <img style={{marginLeft:"40px"}} src={pokemonDetails.img}  />
             <h3 style={{marginLeft:"40px"}}>Altura: {pokemonDetails.height} m</h3>
             <h3 style={{marginLeft:"40px"}}>Peso: {pokemonDetails.weight} Kg</h3>
+            <h3 style={{marginLeft:"40px"}}>Precio: ${pokemonDetails.price}</h3>
 
             {(pokemonDetails.type=="fire" && <h2 style={{color:"red",marginLeft:"20px"}}>Tipo: Fuego 🔥</h2>)}
             {(pokemonDetails.type=="water" && <h2 style={{color:"blue",marginLeft:"20px"}}>Tipo: Agua 🌊</h2>)}
