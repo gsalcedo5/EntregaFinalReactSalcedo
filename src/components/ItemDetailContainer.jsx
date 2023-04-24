@@ -46,9 +46,13 @@ const {cart, addItem, getTotalPrice} = useContext(cartContext);
 
   return (
     <div>
-
-    <ItemDetail pokemonDetails={pokemonDetails} />
-    <ItemCount onAddToCart={handleAddToCart} />
+      <div style={{ display:"flex", justifyContent:"center" , margin:"1px"}}>
+      <ItemDetail pokemonDetails={pokemonDetails}  />
+      </div> 
+      <div style={{ display:"flex", justifyContent:"center", margin:"20px" }}>
+      <ItemCount onAddToCart={handleAddToCart} />
+      </div>
+     
     </div>
   );
 }
