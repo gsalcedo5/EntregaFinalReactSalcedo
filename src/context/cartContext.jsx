@@ -18,7 +18,7 @@ function CartProvider(props){
 
     function getTotalPrice(count,productPrice){
         const totalPrice = productPrice*count;
-        console.log(totalPrice,"tupapa");
+        console.log(totalPrice);
         return totalPrice;
     }
  
