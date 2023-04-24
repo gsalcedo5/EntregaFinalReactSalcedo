@@ -14,13 +14,11 @@ function CartProvider(props){
         setCart(newCart);
     }  
 
-
     function getTotalPrice(count,productPrice){
         const totalPrice = productPrice*count;
         console.log("El precio total de la suma de "+ count+ " pokemones de este tipo es " + totalPrice);
         return totalPrice;
     }
-
 
     function clearCart(){
         setCart([]);
