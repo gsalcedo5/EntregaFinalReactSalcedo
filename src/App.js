@@ -11,7 +11,7 @@ import  CartContainer from './components/CartContainer';
 function App() {
 
   return (
-    <div >
+    <div style={{backgroundColor:"lightblue", color:"black"}}>
       <CartProvider>
         <BrowserRouter> 
           <NavBar img="/imgs/gst.webp" />

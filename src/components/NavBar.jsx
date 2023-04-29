@@ -14,6 +14,7 @@ function NavBar(props) {
             display: "flex",
             justifyContent: "center",
             background: "lightblue",
+            color:"black",
           }}
         >       
                 <img src={props.img} style={{width:"8%"}} alt="fotoLogo" />

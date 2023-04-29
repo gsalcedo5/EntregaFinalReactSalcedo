@@ -7,7 +7,7 @@ import FormCheckout from "./FormCheckout";
 
 function CartContainer(){
     const context = useContext(cartContext);
-    const {cart, clearCart, getTotalPrice } = context;
+    const {cart, clearCart, totalPrice } = context;
    
      const countItems = cart.reduce((acc, item) => {
         acc[item] = (acc[item] || 0) + 1;
@@ -26,7 +26,7 @@ function CartContainer(){
         const order={
             items: cart,
             buyer: userData,
-            total: getTotalPrice(),
+            total: totalPrice,
             date: new Date() ,
         }
         const orderId = await createOrder(order);
@@ -45,7 +45,7 @@ function CartContainer(){
 
             {cart.length==0 && <h2 style={{margin:"51px"}}> Tu Carrito está vacio, agregá pokemones</h2>}
             {cart.length!=0 && <h1 style={{margin:"20px"}}>Tu carrito: </h1>}
-            {cart.length!=0 && <ul style={{margin:"20px"}}>{itemsList}</ul>}
+            {cart.length!=0 && <ul style={{margin:"20px"}}>{itemsList} El total de la compra es de: ${totalPrice} </ul>}
             {cart.length!=0 && <FormCheckout onCheckout={handleCheckout} />}
             
     </div>
